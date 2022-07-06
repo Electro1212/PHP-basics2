@@ -20,7 +20,7 @@
 <?php
 if(isset($_POST['btn'])){
     $x = $_POST['input'];
-    for($i = 1; $i <= 10 ; $i++)
+    for($i = 1; $i < 10 ; $i++)
         echo '<div class="alert alert-success alert-dismissible fade show" role="alert" style="align-items:center; text-align:center;">
          '.$x.' X '.$i.' = '.$x*$i.'<br>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
