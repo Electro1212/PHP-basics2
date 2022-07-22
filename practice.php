@@ -23,7 +23,7 @@ if(isset($_GET['delete_id'])){
 if(isset($_GET['error'])){
     echo'field must not be empty';
 }
-
+//database sql edit connection logic
 if(isset($_POST['updt'])){
     $uname = $_POST['username'];
     $phn = $_POST['phone'];
@@ -37,6 +37,7 @@ if($uname=="" || $phn==""){
     mysqli_query($conn,$sql);
     header("Location:practice.php");
 }
+//fetch data from database for editing
 if(isset($_GET['edit_id'])){
     $id = $_GET['edit_id'];
     $fetch ="SELECT * FROM `users` WHERE Id = $id" ;
@@ -60,11 +61,13 @@ if(isset($_GET['edit_id'])){
 <body>
     <form action="" method="post">
 <?php
+//update id fetch
 if(isset($_GET['edit_id'])){?>
     <input type="hidden" name="update_id" value="<?php echo $_GET['edit_id'];?>">
 <?php } ?>
         
 <?php
+//if else edit logic
 if(isset($_GET['edit_id'])){?>
     <input type="text" name="username" placeholder="enter your name" value="<?php echo $Uname?>">
     <input type="text" name="phone" placeholder="enter your number"  value="<?php echo $Phone?>">
